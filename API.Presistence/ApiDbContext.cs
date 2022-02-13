@@ -1,10 +1,15 @@
 ﻿using API.Domain.Entities;
-using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 
 namespace API.Presistence
 {
-    public class ApiDbContext: IdentityDbContext<ApplicationUser>
+    public class ApiDbContext : IdentityDbContext<>
     {
+        public ApiDbContext(DbContextOptions<ApiDbContext> options) : base(options)
+        {
+
+        }
     }
 }
