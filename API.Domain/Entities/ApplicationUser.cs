@@ -1,7 +1,9 @@
 ﻿
+using Microsoft.AspNetCore.Identity;
+
 namespace API.Domain.Entities
 {
-   public class ApplicationUser:
+   public class User: IdentityUser
     {
     }
 }

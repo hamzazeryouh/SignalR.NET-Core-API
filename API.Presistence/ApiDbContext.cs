@@ -5,7 +5,7 @@ using System;
 
 namespace API.Presistence
 {
-    public class ApiDbContext : IdentityDbContext<>
+    public class ApiDbContext : IdentityDbContext<User>
     {
         public ApiDbContext(DbContextOptions<ApiDbContext> options) : base(options)
         {

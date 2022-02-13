@@ -34,19 +34,21 @@ namespace SignalR.NET_Core_API
             //services.AddDbContext<ApiDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
             services.AddDbContext<ApiDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
             // For Identity  
-            services.AddIdentity<ApplicationUser, IdentityRole>();
-                //.AddEntityFrameworkStores<ApiDbContext>()
-                //.AddDefaultTokenProviders();
+            services.AddIdentity<User, IdentityRole>();
+            //.AddEntityFrameworkStores<ApiDbContext>()
+            //.AddDefaultTokenProviders();
+            services.AddSignalR();
 
-
-            services.AddCors(options => options.AddPolicy("CorsPolicy",
-               builder =>
-               {
-                   builder.AllowAnyHeader()
-                       .AllowAnyMethod()
-                       .SetIsOriginAllowed((host) => true)
-                       .AllowCredentials();
-               }));
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder
+                    //.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials()
+                    .SetIsOriginAllowed((hosts) => true));
+            });
 
 
             // Adding Authentication  
@@ -126,15 +128,18 @@ namespace SignalR.NET_Core_API
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseCors("CorsPolicy");
             app.UseRouting();
 
             app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
+            app.UseSignalR(route =>
             {
-                endpoints.MapRazorPages();
+                route.MapHub<Chat>("/Chat");
             });
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapRazorPages();
+            //});
         }
     }
 }
