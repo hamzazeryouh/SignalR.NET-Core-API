@@ -5,4 +5,15 @@
     <RootNamespace>SignalR.NET_Core_API</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.22" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.22" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.3.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\API.Presistence\API.Presistence.csproj" />
+  </ItemGroup>
+
 </Project>
