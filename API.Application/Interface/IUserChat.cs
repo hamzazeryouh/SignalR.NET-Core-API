@@ -7,6 +7,7 @@ namespace API.Application.Interface
 {
    public interface IUserChat
     {
-        Task<string> Send(string userSend,string UserReceive, string Message);
+        Task SendMessage(string userSend,string UserReceive, string Message);
+        
     }
 }

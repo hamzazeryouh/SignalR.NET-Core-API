@@ -1,3 +1,4 @@
+using API.Application.Services;
 using API.Domain.Entities;
 using API.Presistence;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -34,7 +35,10 @@ namespace SignalR.NET_Core_API
             //services.AddDbContext<ApiDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
             services.AddDbContext<ApiDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
             // For Identity  
-            services.AddIdentity<User, IdentityRole>();
+            services.AddIdentity<User, IdentityRole>()
+                        .AddEntityFrameworkStores<ApiDbContext>()
+        .AddDefaultTokenProviders();
+
             //.AddEntityFrameworkStores<ApiDbContext>()
             //.AddDefaultTokenProviders();
             services.AddSignalR();
@@ -73,7 +77,7 @@ namespace SignalR.NET_Core_API
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"]))
                 };
             });
-
+            services.AddMvc();
             services.AddSwaggerGen(swagger =>
             {
                 //This is to generate the Default UI of Swagger Documentation
@@ -134,7 +138,7 @@ namespace SignalR.NET_Core_API
             app.UseAuthorization();
             app.UseSignalR(route =>
             {
-                route.MapHub<Chat>("/Chat");
+                route.MapHub<UserChat>("/Chat");
             });
             //app.UseEndpoints(endpoints =>
             //{

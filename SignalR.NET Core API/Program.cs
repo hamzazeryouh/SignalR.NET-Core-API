@@ -21,6 +21,8 @@ namespace SignalR.NET_Core_API
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseUrls("https://192.168.0.14:5001/");
                 });
+
     }
 }
