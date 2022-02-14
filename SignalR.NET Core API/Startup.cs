@@ -84,8 +84,8 @@ namespace SignalR.NET_Core_API
                 swagger.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "JWT Token SalaNoor API",
-                    Description = " SalaNoor ASP.NET Core 3.1 Web API"
+                    Title = "JWT Token API API",
+                    Description = " API ASP.NET Core 3.1 Web API"
                 });
                 // To Enable authorization using Swagger (JWT)
                 swagger.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
