@@ -10,7 +10,10 @@ namespace SignalR.NET_Core_API.Controller
         /// </summary>
         protected ChatController(ILoggerFactory factory) : base(factory)
         {
+
         }
+
+
 
     }
 }
