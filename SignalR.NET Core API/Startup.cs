@@ -138,7 +138,7 @@ namespace SignalR.NET_Core_API
             app.UseAuthorization();
             app.UseSignalR(route =>
             {
-                route.MapHub<UserChat>("/Chat");
+                route.MapHub<UserChatHub>("/Chat");
             });
             //app.UseEndpoints(endpoints =>
             //{
