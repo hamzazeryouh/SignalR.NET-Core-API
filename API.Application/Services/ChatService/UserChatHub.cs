@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace API.Application.Services
 {
-    public class UserChat : Hub,IUserChat
+    public class UserChatHub : Hub,IUserChat
     {
         /// <summary>
         /// Defines the _logger.
         /// </summary>
-        private readonly ILogger<UserChat> _logger;
+        private readonly ILogger<UserChatHub> _logger;
 
         /// <summary>
         /// Defines the _signInManager.
@@ -29,9 +29,9 @@ namespace API.Application.Services
         /// <param name="loggerFactory">The loggerFactory<see cref="ILoggerFactory"/>.</param>
         /// <param name="signInManager">The signInManager<see cref="SignInManager{UserEntity}"/>.</param>
         /// <param name="mediaService">The mediaService<see cref="IMediaService"/>.</param>
-        public UserChat(ILoggerFactory loggerFactory, SignInManager<User> signInManager)
+        public UserChatHub(ILoggerFactory loggerFactory, SignInManager<User> signInManager)
         {
-            _logger = loggerFactory.CreateLogger<UserChat>();
+            _logger = loggerFactory.CreateLogger<UserChatHub>();
             _signInManager = signInManager;
         }
         public override async Task OnConnectedAsync()

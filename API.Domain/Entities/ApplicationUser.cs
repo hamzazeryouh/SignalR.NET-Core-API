@@ -4,7 +4,7 @@ using System;
 
 namespace API.Domain.Entities
 {
-   public class User: IdentityUser<Guid>
+   public class User: IdentityUser
     {
         public string Pseudo { get; set; }
 
