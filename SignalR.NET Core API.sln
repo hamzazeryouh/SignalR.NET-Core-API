@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31612.314
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.NET Core API", "SignalR.NET Core API\SignalR.NET Core API.csproj", "{9D36D2BB-D3A3-4487-8DDD-7C683D4CC517}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalR.NET.Core.API", "SignalR.NET Core API\SignalR.NET.Core.API.csproj", "{9D36D2BB-D3A3-4487-8DDD-7C683D4CC517}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Presistence", "API.Presistence\API.Presistence.csproj", "{2D306EA9-C1AA-46D0-9735-248736560362}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Presistence", "API.Presistence\API.Presistence.csproj", "{2D306EA9-C1AA-46D0-9735-248736560362}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Domain", "API.Domain\API.Domain.csproj", "{05D8A294-E1B1-4579-BFC8-EFE8E639B4E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Domain", "API.Domain\API.Domain.csproj", "{05D8A294-E1B1-4579-BFC8-EFE8E639B4E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Application", "API.Application\API.Application.csproj", "{074B0FBB-5033-4072-8885-ED11B3019810}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Application", "API.Application\API.Application.csproj", "{074B0FBB-5033-4072-8885-ED11B3019810}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
